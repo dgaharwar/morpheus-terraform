@@ -147,10 +147,12 @@ variable "node_group_name" {
   default     = "eks_tf_group"
 }
 
+/*
 variable "node_group_cluster_name" {
   description = "Name of the EKS Cluster."
   default     = "eks_tf"
-}
+} 
+*/
 
 #variable "node_group_role_arn" {
 #  description = "(Required) Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group."
@@ -254,4 +256,22 @@ variable "new_role_name" {
   default     = "eks-tf-role"
 }
 
+variable "node_group_max_size" {
+  description = "The maximum number of nodes for the EKS node group"
+  type        = number
+  default     = 3
 
+}
+
+variable "node_group_desired_size" {
+  description = "The desired number of nodes for the EKS node group"
+  type        = number
+  default     = 2
+
+}
+
+variable "node_group_min_size" {
+  description = "The minimum number of nodes for the EKS node group"
+  type        = number
+  default     = 2
+}
