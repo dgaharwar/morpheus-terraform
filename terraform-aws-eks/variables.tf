@@ -199,7 +199,7 @@ variable "node_group_force_update_version" {
 
 variable "node_group_instance_types" {
   description = "(Optional) Set of instance types associated with the EKS Node Group. Defaults to ['t3.medium']. Terraform will only perform drift detection if a configuration value is provided. Currently, the EKS API only accepts a single value in the set."
-  default     = ""
+  default     = ["t3.medium"]
 }
 
 variable "node_group_labels" {
