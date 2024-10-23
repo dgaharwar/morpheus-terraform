@@ -9,12 +9,6 @@ terraform {
     }
   }
 }
-provider "aws" {
-  region     = "us-east-1"
-  access_key = "AKIAVH2BZOIJC4IRN5XC"
-  secret_key = "mwIDRcen1XN01MNf94Kd+sVwuRC4P3PGWAO4uyDZ"
-}
-
 
 variable "region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
