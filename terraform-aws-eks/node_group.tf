@@ -35,22 +35,20 @@ resource "aws_iam_role_policy_attachment" "eks_node_group_role_policy_attachment
 resource "aws_eks_node_group" "eks_node_group" {
   count = var.node_group_enable ? 1 : 0
 
-  cluster_name    = var.node_group_cluster_name
+  // cluster_name    = var.node_group_cluster_name
+  cluster_name    = var.cluster_name
   node_group_name = var.node_group_name
-  #node_role_arn   = var.node_group_role_arn
+  // node_role_arn   = var.node_group_role_arn
   node_role_arn   = var.use_existing_role ? var.existing_node_group_role_arn : aws_iam_role.eks_node_group_role[0].arn
   subnet_ids      = var.node_group_subnet_ids
 
-  dynamic "scaling_config" {
-    iterator = scaling_config
-    for_each = var.node_group_scaling_config
-
-    content {
-      max_size     = lookup(scaling_config.value, "max_size", null)
-      desired_size = lookup(scaling_config.value, "desired_size", null)
-      min_size     = lookup(scaling_config.value, "min_size", null)
-    }
+  
+  scaling_config {
+    max_size     = var.node_group_max_size
+    desired_size = var.node_group_desired_size
+    min_size     = var.node_group_min_size
   }
+  
 
   ami_type = var.node_group_ami_type
   // capacity_type        = var.node_group_capacity_type
