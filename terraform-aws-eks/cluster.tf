@@ -40,18 +40,10 @@ resource "aws_eks_cluster" "eks_cluster" {
   #role_arn = var.cluster_role_arn
    role_arn = var.use_existing_role ? var.existing_cluster_role_arn : aws_iam_role.eks_cluster_role[0].arn
 
-  dynamic "vpc_config" {
-    iterator = vpc_config
-    for_each = var.cluster_vpc_config
+  vpc_config {
+    subnet_ids              = var.subnet_ids
+    security_group_ids      = var.security_group_ids
 
-    content {
-      subnet_ids = lookup(vpc_config.value, "subnet_ids", null)
-
-      public_access_cidrs     = lookup(vpc_config.value, "public_access_cidrs", null)
-      endpoint_private_access = lookup(vpc_config.value, "endpoint_private_access", null)
-      endpoint_public_access  = lookup(vpc_config.value, "endpoint_public_access", null)
-      security_group_ids      = lookup(vpc_config.value, "security_group_ids", null)
-    }
   }
 
   enabled_cluster_log_types = var.cluster_enabled_cluster_log_types
