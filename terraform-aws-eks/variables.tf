@@ -9,6 +9,9 @@ terraform {
     }
   }
 }
+provider "aws" {
+region     = "us-east-1"
+}
 
 variable "region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
