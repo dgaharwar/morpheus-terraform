@@ -71,13 +71,13 @@ variable "cluster_version" {
 variable "subnet_ids" {
   description = "List of subnet IDs for the EKS cluster"
   type        = list(string)
-  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
+  default     = ""
 }
 
 variable "security_group_ids" {
   description = "List of security group IDs"
   type        = list(string)
-  default     = [ "sg-09391fa03725eba66" ]
+  default     = ""
 }
 
 
@@ -161,7 +161,8 @@ variable "node_group_cluster_name" {
 
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
+    type        = list(string)
+    default     = ""
 }
 
 /*
@@ -198,7 +199,7 @@ variable "node_group_force_update_version" {
 
 variable "node_group_instance_types" {
   description = "(Optional) Set of instance types associated with the EKS Node Group. Defaults to ['t3.medium']. Terraform will only perform drift detection if a configuration value is provided. Currently, the EKS API only accepts a single value in the set."
-  default     = ["t3.medium"]
+  default     = ""
 }
 
 variable "node_group_labels" {
