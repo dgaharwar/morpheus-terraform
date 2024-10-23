@@ -1,4 +1,3 @@
-
 #---------------------------------------------------
 # AWS EKS New roles
 #---------------------------------------------------
@@ -37,7 +36,7 @@ resource "aws_eks_cluster" "eks_cluster" {
   count = var.cluster_enable ? 1 : 0
 
   name     = var.cluster_name
-  #role_arn = var.cluster_role_arn
+  //role_arn = var.cluster_role_arn
    role_arn = var.use_existing_role ? var.existing_cluster_role_arn : aws_iam_role.eks_cluster_role[0].arn
 
   vpc_config {
