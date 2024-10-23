@@ -164,6 +164,7 @@ variable "node_group_subnet_ids" {
   default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
 }
 
+/*
 variable "node_group_scaling_config" {
   description = ""
   default = [
@@ -174,7 +175,7 @@ variable "node_group_scaling_config" {
     }
   ]
 }
-
+*/
 variable "node_group_ami_type" {
   description = "(Optional) Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU. Terraform will only perform drift detection if a configuration value is provided."
   default     = "AL2_x86_64"
