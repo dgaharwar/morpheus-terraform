@@ -9,6 +9,12 @@ terraform {
     }
   }
 }
+provider "aws" {
+  region     = "us-east-1"
+  access_key = "AKIAVH2BZOIJC4IRN5XC"
+  secret_key = "mwIDRcen1XN01MNf94Kd+sVwuRC4P3PGWAO4uyDZ"
+}
+
 
 variable "region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
@@ -49,19 +55,31 @@ variable "cluster_version" {
   default     = null
 }
 
-variable "cluster_vpc_config" {
-  description = "List of VPC configurations for the EKS cluster"
-  type = list(object({
-    subnet_ids         = list(string)
-    security_group_ids = list(string)
-  }))
-  default = [
-    {
-      subnet_ids         = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
-      security_group_ids = ["sg-09391fa03725eba66"]
-    }
-  ]
+#variable "cluster_vpc_config" {
+#  description = "List of VPC configurations for the EKS cluster"
+#  type = list(object({
+#    subnet_ids         = list(string)
+#    security_group_ids = list(string)
+#  }))
+#  default = [
+#    {
+#      subnet_ids         = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
+#      security_group_ids = ["sg-09391fa03725eba66"]
+#    }
+#  ]
+#}
+variable "subnet_ids" {
+  description = "List of subnet IDs for the EKS cluster"
+  type        = list(string)
+  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
 }
+
+variable "security_group_ids" {
+  description = "List of security group IDs"
+  type        = list(string)
+  default     = [ "sg-09391fa03725eba66" ]
+}
+
 
 variable "cluster_encryption_config" {
   description = "(Optional) Configuration block with encryption configuration for the cluster. Only available on Kubernetes 1.13 and above clusters created after March 6, 2020."
