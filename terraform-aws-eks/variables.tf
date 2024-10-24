@@ -73,12 +73,14 @@ variable "cluster_version" {
 variable "subnet_ids" {
   description = "List of subnet IDs for the EKS cluster"
   type        = list(string)
+  default     = [ "subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be" ]
 
 }
 
 variable "security_group_ids" {
   description = "List of security group IDs"
   type        = list(string)
+  default     = [ "sg-09391fa03725eba66" ]
 
 }
 
@@ -158,6 +160,7 @@ variable "node_group_name" {
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
     type        = list(string)
+    default     = [ "subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be" ]
 
 }
 
@@ -227,13 +230,13 @@ variable "use_existing_role" {
 variable "existing_cluster_role_arn" {
   description = "Existing cluster role ARN"
   type        = string
-  default     = ""
+  default     = "arn:aws:iam::360378364434:role/aws-morpheus-role"
 }
 
 variable "existing_node_group_role_arn" {
   description = "Existing node group role ARN"
   type        = string
-  default     = ""
+  default     = "arn:aws:iam::360378364434:role/morpheus-eksNodeRole"
 }
 
 variable "new_role_name" {
@@ -272,4 +275,3 @@ variable "secret_key" {
   sensitive   = true
 
 }
-
