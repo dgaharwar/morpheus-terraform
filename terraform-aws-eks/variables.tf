@@ -75,11 +75,11 @@ variable "subnet_ids" {
 variable "security_group_ids" {
   description = "List of security group IDs"
   type        = string
+  default     = ["sg-2b299333","sg-0dfa7b8de2b65bb4c"]
 }
      
 locals {
   security_groups = split(",", var.security_group_ids)
-#  default         = ["sg-2b299333","sg-0dfa7b8de2b65bb4c"]
 }
 
 
