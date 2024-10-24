@@ -83,6 +83,12 @@ type        = string
 default     = ""
 }
 
+variable "subnet_ids" {
+  description = "List of subnet IDs for the EKS cluster"
+  type        = string
+  default     = ""
+}
+
 variable "security_group_ids" {
   description = "List of security group IDs"
   //type        = list(string)
@@ -177,6 +183,14 @@ variable "node_group_subnet_id_2" {
     default     = ""
 
 }
+
+variable "node_group_subnet_ids" {
+  description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
+    type        = string
+    default     = ""
+
+}
+
 
 variable "node_group_ami_type" {
   description = "(Optional) Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU. Terraform will only perform drift detection if a configuration value is provided."
