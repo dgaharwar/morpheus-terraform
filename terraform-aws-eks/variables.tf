@@ -76,6 +76,20 @@ variable "subnet_ids" {
   default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
 }
 
+variable "subnet_id1" {
+  description = "List of subnet IDs for the EKS cluster"
+  type        = string
+
+}
+
+variable "subnet_id2" {
+  description = "List of subnet IDs for the EKS cluster"
+  type        = string
+
+}
+
+
+
 variable "security_group_ids" {
   description = "List of security group IDs"
   type        = list(string)
