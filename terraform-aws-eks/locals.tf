@@ -1,5 +1,3 @@
-
-locals {   
-  
-  subnets = [var.subnet_id1, var.subnet_id1]
-}
+#locals {     
+#  subnets = [var.subnet_id1, var.subnet_id1]
+#}
