@@ -75,12 +75,13 @@ description = "List of subnet IDs for the EKS cluster"
 type        = string
 default     = ""
 
+}
+
 variable "subnet_id_2" {
 description = "List of subnet IDs for the EKS cluster"
 type        = string
 default     = ""
-
-
+}
 
 variable "security_group_ids" {
   description = "List of security group IDs"
@@ -163,10 +164,17 @@ variable "node_group_name" {
 #  default     = []
 #}
 
-variable "node_group_subnet_ids" {
+variable "node_group_subnet_id_1" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-    type        = list(string)
-    default     = [ "subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be" ]
+    type        = string
+    default     = ""
+
+}
+
+variable "node_group_subnet_id_2" {
+  description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
+    type        = string
+    default     = ""
 
 }
 
