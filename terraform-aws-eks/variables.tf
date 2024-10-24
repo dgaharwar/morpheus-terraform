@@ -268,12 +268,12 @@ variable "node_group_min_size" {
 variable "access_key" {
   type        = string
   sensitive   = true
-  default     = null
+
 
 }
 variable "secret_key" {
   type        = string
   sensitive   = true
-  default     = null
+
 
 }
