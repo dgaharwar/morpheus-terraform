@@ -5,18 +5,18 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+      source = "hashicorp/aws"
     }
   }
 }
 
 # Configure the AWS Provider
 provider "aws" {
-  region = "us-east-1"
+  region     = "us-east-1"
   access_key = var.access_key
   secret_key = var.secret_key
 }
+
 
 variable "region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
@@ -70,31 +70,16 @@ variable "cluster_version" {
 #    }
 #  ]
 #}
-variable "subnet_id_1" {
-description = "List of subnet IDs for the EKS cluster"
-type        = string
-default     = ""
-
-}
-
-variable "subnet_id_2" {
-description = "List of subnet IDs for the EKS cluster"
-type        = string
-default     = ""
-}
-
 variable "subnet_ids" {
   description = "List of subnet IDs for the EKS cluster"
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
 }
 
 variable "security_group_ids" {
   description = "List of security group IDs"
-  //type        = list(string)
-    type        = string
-    default     = ""
-
+  type        = list(string)
+  default     = [ "sg-09391fa03725eba66" ]
 }
 
 
@@ -164,34 +149,35 @@ variable "node_group_name" {
   default     = "eks_tf_group"
 }
 
+/*
+variable "node_group_cluster_name" {
+  description = "Name of the EKS Cluster."
+  default     = "eks_tf"
+} 
+*/
 
 #variable "node_group_role_arn" {
 #  description = "(Required) Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group."
 #  default     = []
 #}
 
-variable "node_group_subnet_id_1" {
-  description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-    type        = string
-    default     = ""
-
-}
-
-variable "node_group_subnet_id_2" {
-  description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-    type        = string
-    default     = ""
-
-}
-
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-    type        = string
-    default     = ""
-
+  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
 }
 
-
+/*
+variable "node_group_scaling_config" {
+  description = ""
+  default = [
+    {
+      max_size     = 1
+      desired_size = 1
+      min_size     = 1
+    }
+  ]
+}
+*/
 variable "node_group_ami_type" {
   description = "(Optional) Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU. Terraform will only perform drift detection if a configuration value is provided."
   default     = "AL2_x86_64"
@@ -258,13 +244,13 @@ variable "use_existing_role" {
 variable "existing_cluster_role_arn" {
   description = "Existing cluster role ARN"
   type        = string
-  default     = "arn:aws:iam::360378364434:role/aws-morpheus-role"
+  default     = ""
 }
 
 variable "existing_node_group_role_arn" {
   description = "Existing node group role ARN"
   type        = string
-  default     = "arn:aws:iam::360378364434:role/morpheus-eksNodeRole"
+  default     = ""
 }
 
 variable "new_role_name" {
@@ -293,15 +279,14 @@ variable "node_group_min_size" {
   default     = 2
 }
 
-variable "access_key" {
-  type        = string
-  sensitive   = true
 
+variable "access_key" {
+  type      = string
+  sensitive = true
 
 }
 variable "secret_key" {
-  type        = string
-  sensitive   = true
-
+  type      = string
+  sensitive = true
 
 }
