@@ -159,7 +159,8 @@ variable "node_group_cluster_name" {
 
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
+  type        = string  
+  default     = ""
 }
 
 /*
