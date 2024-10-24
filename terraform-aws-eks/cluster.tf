@@ -93,5 +93,5 @@ resource "aws_eks_cluster" "eks_cluster" {
     ignore_changes        = []
   }
 
-  depends_on = []
+  depends_on = [aws_iam_role.eks_cluster_role]
 }
