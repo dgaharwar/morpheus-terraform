@@ -58,8 +58,8 @@ variable "cluster_version" {
 
 variable "subnet_ids" {
   description = "List of subnet IDs for the EKS cluster"
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = "["subnet-ed6462e3","subnet-81980bb0"]"
 }
 
 #variable "subnet_id1" {
@@ -74,8 +74,8 @@ variable "subnet_ids" {
 
 variable "security_group_ids" {
   description = "List of security group IDs"
-  type        = string
-  default     = ""
+  type        = list(string)
+  default     = "["sg-2b299333","sg-0dfa7b8de2b65bb4c"]"
 }
 
 
@@ -159,8 +159,8 @@ variable "node_group_cluster_name" {
 
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
-  type        = string  
-  default     = ""
+  type        = list(string)  
+  default     = "["subnet-ed6462e3","subnet-81980bb0"]"
 }
 
 /*
