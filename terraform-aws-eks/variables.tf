@@ -149,12 +149,6 @@ variable "node_group_name" {
   default     = "eks_tf_group"
 }
 
-/*
-variable "node_group_cluster_name" {
-  description = "Name of the EKS Cluster."
-  default     = "eks_tf"
-} 
-*/
 
 #variable "node_group_role_arn" {
 #  description = "(Required) Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group."
@@ -167,18 +161,6 @@ variable "node_group_subnet_ids" {
 
 }
 
-/*
-variable "node_group_scaling_config" {
-  description = ""
-  default = [
-    {
-      max_size     = 1
-      desired_size = 1
-      min_size     = 1
-    }
-  ]
-}
-*/
 variable "node_group_ami_type" {
   description = "(Optional) Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU. Terraform will only perform drift detection if a configuration value is provided."
   default     = "AL2_x86_64"
