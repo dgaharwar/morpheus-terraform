@@ -10,9 +10,8 @@ resource "aws_eks_cluster" "eks_cluster" {
    role_arn = var.use_existing_role ? var.existing_cluster_role_arn : aws_iam_role.eks_cluster_role[0].arn
 
   vpc_config {
-    subnet_ids              = [var.subnet_id1, var.subnet_id1] #var.subnet_ids
+    subnet_ids              = var.subnet_ids
     security_group_ids      = var.security_group_ids
-
   }
 
   enabled_cluster_log_types = var.cluster_enabled_cluster_log_types
