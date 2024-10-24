@@ -12,16 +12,15 @@ terraform {
 
 # Configure the AWS Provider
 provider "aws" {
-  region     = "us-east-1"
+  region     = var.region
   access_key = var.access_key
   secret_key = var.secret_key
 }
 
 
-variable "region" {
-  description = "The region where to deploy this code (e.g. us-east-1)."
-  default     = "us-east-1"
-}
+variable "region" {}
+variable "access_key" {}
+variable "secret_key" {}
 
 variable "tags" {
   description = "A list of tag blocks."
@@ -57,43 +56,26 @@ variable "cluster_version" {
   default     = null
 }
 
-#variable "cluster_vpc_config" {
-#  description = "List of VPC configurations for the EKS cluster"
-#  type = list(object({
-#    subnet_ids         = list(string)
-#    security_group_ids = list(string)
-#  }))
-#  default = [
-#    {
-#      subnet_ids         = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
-#      security_group_ids = ["sg-09391fa03725eba66"]
-#    }
-#  ]
-#}
 variable "subnet_ids" {
   description = "List of subnet IDs for the EKS cluster"
-  type        = list(string)
-  default     = ["subnet-008f139b69a07aca3", "subnet-0cd80ea06c519d5be"]
-}
-
-variable "subnet_id1" {
-  description = "List of subnet IDs for the EKS cluster"
   type        = string
-
+  default     = ""
 }
 
-variable "subnet_id2" {
-  description = "List of subnet IDs for the EKS cluster"
-  type        = string
+#variable "subnet_id1" {
+#  description = "List of subnet IDs for the EKS cluster"
+#  type        = string
+#}
 
-}
-
-
+#variable "subnet_id2" {
+#  description = "List of subnet IDs for the EKS cluster"
+#  type        = string
+#}
 
 variable "security_group_ids" {
   description = "List of security group IDs"
-  type        = list(string)
-  default     = [ "sg-09391fa03725eba66" ]
+  type        = string
+  default     = ""
 }
 
 
@@ -293,14 +275,3 @@ variable "node_group_min_size" {
   default     = 2
 }
 
-
-variable "access_key" {
-  type      = string
-  sensitive = true
-
-}
-variable "secret_key" {
-  type      = string
-  sensitive = true
-
-}
