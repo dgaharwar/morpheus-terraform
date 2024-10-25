@@ -6,7 +6,6 @@ resource "aws_eks_cluster" "eks_cluster" {
   count = var.cluster_enable ? 1 : 0
 
   name     = var.cluster_name
-  //role_arn = var.cluster_role_arn
    role_arn = var.use_existing_role ? var.existing_cluster_role_arn : aws_iam_role.eks_cluster_role[0].arn
 
   vpc_config {
@@ -34,15 +33,6 @@ resource "aws_eks_cluster" "eks_cluster" {
       }
     }
   }
-
-  // Blocks of type "kubernetes_network_config" are not expected here.
-  // dynamic "kubernetes_network_config" {
-  //   iterator = kubernetes_network_config
-  //   for_each = var.cluster_kubernetes_network_config
-  //   content {
-  //     service_ipv4_cidr = lookup(kubernetes_network_config.value, "service_ipv4_cidr", null)
-  //   }
-  // }
 
   dynamic "timeouts" {
     iterator = timeouts
