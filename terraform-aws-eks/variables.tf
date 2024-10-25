@@ -41,11 +41,6 @@ variable "cluster_name" {
   default     = "eks_tf"
 }
 
-#variable "cluster_role_arn" {
-#  description = "(Required) The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf."
-#  default     = []
-#}
-
 variable "cluster_enabled_cluster_log_types" {
   description = "(Optional) A list of the desired control plane logging to enable. For more information, see Amazon EKS Control Plane Logging"
   default     = []
@@ -64,24 +59,18 @@ variable "subnet_ids" {
 
 variable "security_group_ids" {
   description = "List of security group IDs"
-  type        = string
-  default     = "sg-2b299333,sg-0dfa7b8de2b65bb4c"
+  type        = list(string)
+  default     = ["sg-2b299333","sg-0dfa7b8de2b65bb4c"]
 }
      
-locals {
-  security_groups = split(",", var.security_group_ids)
-}
-
+#locals {
+#  security_groups = split(",", var.security_group_ids)
+#}
 
 variable "cluster_encryption_config" {
   description = "(Optional) Configuration block with encryption configuration for the cluster. Only available on Kubernetes 1.13 and above clusters created after March 6, 2020."
   default     = []
 }
-
-// variable "cluster_kubernetes_network_config" {
-//   description = "(Optional) Configuration block with kubernetes network configuration for the cluster. If removed, Terraform will only perform drift detection if a configuration value is provided."
-//   default     = []
-// }
 
 variable "cluster_timeouts" {
   description = "Set timeouts for EKS cluster"
@@ -139,17 +128,10 @@ variable "node_group_name" {
   default     = "eks_tf_group"
 }
 
-/*
 variable "node_group_cluster_name" {
   description = "Name of the EKS Cluster."
   default     = "eks_tf"
-} 
-*/
-
-#variable "node_group_role_arn" {
-#  description = "(Required) Amazon Resource Name (ARN) of the IAM Role that provides permissions for the EKS Node Group."
-#  default     = []
-#}
+}
 
 variable "node_group_subnet_ids" {
   description = "(Required) Identifiers of EC2 Subnets to associate with the EKS Node Group. These subnets must have the following resource tag: kubernetes.io/cluster/CLUSTER_NAME (where CLUSTER_NAME is replaced with the name of the EKS Cluster)."
@@ -157,7 +139,6 @@ variable "node_group_subnet_ids" {
   default     = ["subnet-37efa251","subnet-37a1ea16"]
 }
 
-/*
 variable "node_group_scaling_config" {
   description = ""
   default = [
@@ -168,16 +149,11 @@ variable "node_group_scaling_config" {
     }
   ]
 }
-*/
+
 variable "node_group_ami_type" {
   description = "(Optional) Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU. Terraform will only perform drift detection if a configuration value is provided."
   default     = "AL2_x86_64"
 }
-
-// variable "node_group_capacity_type" {
-//   description = "(Optional) Type of capacity associated with the EKS Node Group. Valid values: ON_DEMAND, SPOT. Terraform will only perform drift detection if a configuration value is provided."
-//   default     = null
-// }
 
 variable "node_group_disk_size" {
   description = "(Optional) Disk size in GiB for worker nodes. Defaults to 20. Terraform will only perform drift detection if a configuration value is provided."
