@@ -10,7 +10,7 @@ resource "aws_eks_cluster" "eks_cluster" {
 
   vpc_config {
     subnet_ids              = var.subnet_ids
-    security_group_ids      = local.security_groups
+    security_group_ids      = security_group_ids
   }
 
   enabled_cluster_log_types = var.cluster_enabled_cluster_log_types
