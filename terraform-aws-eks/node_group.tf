@@ -35,10 +35,8 @@ resource "aws_iam_role_policy_attachment" "eks_node_group_role_policy_attachment
 resource "aws_eks_node_group" "eks_node_group" {
   count = var.node_group_enable ? 1 : 0
 
-  // cluster_name    = var.node_group_cluster_name
   cluster_name    = var.cluster_name
   node_group_name = var.node_group_name
-  // node_role_arn   = var.node_group_role_arn
   node_role_arn   = var.use_existing_role ? var.existing_node_group_role_arn : aws_iam_role.eks_node_group_role[0].arn
   subnet_ids      = var.node_group_subnet_ids
 
@@ -51,7 +49,6 @@ resource "aws_eks_node_group" "eks_node_group" {
   
 
   ami_type = var.node_group_ami_type
-  // capacity_type        = var.node_group_capacity_type
   disk_size            = var.node_group_disk_size
   force_update_version = var.node_group_force_update_version
   instance_types       = var.node_group_instance_types
