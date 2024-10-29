@@ -60,7 +60,12 @@ variable "subnet_ids" {
 variable "security_group_ids_json" {
   description = "List of security group IDs"
   type        = string
-  default     = "[{\"id\":\"sg-0dfa7b8de2b65bb4c\"},{\"id\":\"sg-2b299333\"}]"
+  default     = <<EOF
+    [
+      { "id": "sg-2b299333" },
+      { "id": "sg-0dfa7b8de2b65bb4c" }
+    ]
+    EOF
 }
      
 locals {
