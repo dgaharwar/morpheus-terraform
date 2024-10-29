@@ -57,15 +57,15 @@ variable "subnet_ids" {
   default     = ["subnet-37efa251","subnet-37a1ea16"]
 }
 
-variable "security_group_ids" {
+variable "security_group_ids_json" {
   description = "List of security group IDs"
-  type        = list(string)
-  default     = ["sg-2b299333","sg-0dfa7b8de2b65bb4c"]
+  type        = string
+  default     = "[{\"id\":\"sg-0dfa7b8de2b65bb4c\"},{\"id\":\"sg-2b299333\"}]"
 }
      
-#locals {
-#  security_groups = split(",", var.security_group_ids)
-#}
+locals {
+  security_group_ids = [for sg in jsondecode(var.security_group_ids_json) : sg.id]
+}
 
 variable "cluster_encryption_config" {
   description = "(Optional) Configuration block with encryption configuration for the cluster. Only available on Kubernetes 1.13 and above clusters created after March 6, 2020."
