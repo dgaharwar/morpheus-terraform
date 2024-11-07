@@ -57,19 +57,12 @@ variable "subnet_ids" {
   default     = ["subnet-37efa251","subnet-37a1ea16"]
 }
 
-variable "security_group_ids_json" {
-  description = "List of security group IDs"
-  type        = string
-  default     = <<EOF
-    [
-      { "id": "sg-2b299333" },
-      { "id": "sg-0dfa7b8de2b65bb4c" }
-    ]
-    EOF
+variable "vpc_security_group_ids" {
+   type = string
 }
      
 locals {
-  security_group_ids = [for sg in jsondecode(var.security_group_ids_json) : sg.id]
+  security_group_ids = split(",", var.vpc_security_group_ids)
 }
 
 variable "cluster_encryption_config" {
