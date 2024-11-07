@@ -1,6 +1,11 @@
 #---------------------------------------------------
 # AWS EKS cluster
 #---------------------------------------------------
+
+Output "vpc_security_group_ids" {
+  description = "List of security groups ids"
+  value       = local.security_group_ids
+
 output "cluster_id" {
   description = "The name of the cluster."
   value       = element(concat(aws_eks_cluster.eks_cluster.*.id, [""], ), 0)
