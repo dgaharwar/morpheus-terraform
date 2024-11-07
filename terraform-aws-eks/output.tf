@@ -5,6 +5,7 @@
 output "vpc_security_group_ids" {
   description = "List of security groups ids"
   value       = local.security_group_ids
+}
 
 output "cluster_id" {
   description = "The name of the cluster."
