@@ -368,7 +368,7 @@ variable "instance_id" {
 variable "volume_device_name" {
   description = "Device name for the volume"
   type        = string
-  default     = "/sda/xvda"
+  default     = "/dev/xvdf"
 }
 
 variable "volume_size" {
