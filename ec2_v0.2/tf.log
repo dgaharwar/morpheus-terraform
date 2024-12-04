@@ -1,0 +1,148 @@
+2024-11-25T16:12:51.124+0100 [INFO]  Terraform version: 1.9.8
+2024-11-25T16:12:51.124+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.58.0
+2024-11-25T16:12:51.124+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.20.0
+2024-11-25T16:12:51.124+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-11-25T16:12:51.124+0100 [DEBUG] using github.com/zclconf/go-cty v1.14.4
+2024-11-25T16:12:51.124+0100 [INFO]  Go runtime version: go1.22.7
+2024-11-25T16:12:51.124+0100 [INFO]  CLI args: []string{"terraform", "apply", "--var-file", "local_test.tfvars"}
+2024-11-25T16:12:51.124+0100 [DEBUG] Attempting to open CLI config file: /home/hase/.terraformrc
+2024-11-25T16:12:51.124+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-11-25T16:12:51.124+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-11-25T16:12:51.124+0100 [DEBUG] ignoring non-existing provider search directory /home/hase/.terraform.d/plugins
+2024-11-25T16:12:51.125+0100 [DEBUG] will search for provider plugins in /home/hase/.local/share/terraform/plugins
+2024-11-25T16:12:51.125+0100 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2024-11-25T16:12:51.125+0100 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2024-11-25T16:12:51.125+0100 [DEBUG] ignoring non-existing provider search directory /var/lib/snapd/desktop/terraform/plugins
+2024-11-25T16:12:51.126+0100 [INFO]  CLI command args: []string{"apply", "--var-file", "local_test.tfvars"}
+2024-11-25T16:12:51.388+0100 [DEBUG] checking for provisioner in "."
+2024-11-25T16:12:51.389+0100 [DEBUG] checking for provisioner in "/usr/bin"
+2024-11-25T16:12:51.400+0100 [INFO]  backend/local: starting Apply operation
+2024-11-25T16:12:51.438+0100 [DEBUG] created provider logger: level=debug
+2024-11-25T16:12:51.438+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-25T16:12:51.448+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-25T16:12:51.454+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10357
+2024-11-25T16:12:51.454+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-25T16:12:51.808+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-25T16:12:51.808+0100"
+2024-11-25T16:12:51.889+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: network=unix address=/tmp/plugin2129220356 timestamp="2024-11-25T16:12:51.889+0100"
+2024-11-25T16:12:51.889+0100 [DEBUG] provider: using plugin: version=5
+2024-11-25T16:12:51.958+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-25T16:12:51.960+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10357
+2024-11-25T16:12:51.960+0100 [DEBUG] provider: plugin exited
+2024-11-25T16:12:51.961+0100 [DEBUG] Building and walking validate graph
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_type.centos_instance" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "data.morpheus_cloud.morpheus_vsphere" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "data.morpheus_resource_pool.vsphere_resource_pool" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "data.morpheus_group.testGroup" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ProviderTransformer: "data.morpheus_plan.vmware" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:51.961+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.centos_instance" references: []
+2024-11-25T16:12:51.961+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere" references: []
+2024-11-25T16:12:51.961+0100 [DEBUG] ReferenceTransformer: "data.morpheus_resource_pool.vsphere_resource_pool" references: [data.morpheus_cloud.morpheus_vsphere]
+2024-11-25T16:12:51.961+0100 [DEBUG] ReferenceTransformer: "var.tenant_subdomain" references: []
+2024-11-25T16:12:51.961+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/gomorpheus/morpheus\"]" references: [var.morpheus_url]
+2024-11-25T16:12:51.962+0100 [DEBUG] ReferenceTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance" references: [data.morpheus_plan.vmware data.morpheus_group.testGroup data.morpheus_cloud.morpheus_vsphere data.morpheus_instance_type.centos_instance data.morpheus_resource_pool.vsphere_resource_pool]
+2024-11-25T16:12:51.962+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.testGroup" references: []
+2024-11-25T16:12:51.962+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware" references: []
+2024-11-25T16:12:51.962+0100 [DEBUG] ReferenceTransformer: "var.morpheus_url" references: []
+2024-11-25T16:12:51.962+0100 [DEBUG] Starting graph walk: walkValidate
+2024-11-25T16:12:51.968+0100 [DEBUG] created provider logger: level=debug
+2024-11-25T16:12:51.968+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-25T16:12:51.973+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-25T16:12:51.977+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10373
+2024-11-25T16:12:51.977+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-25T16:12:52.328+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-25T16:12:52.327+0100"
+2024-11-25T16:12:52.416+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: address=/tmp/plugin1987959786 network=unix timestamp="2024-11-25T16:12:52.416+0100"
+2024-11-25T16:12:52.416+0100 [DEBUG] provider: using plugin: version=5
+2024-11-25T16:12:52.482+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-25T16:12:52.484+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10373
+2024-11-25T16:12:52.484+0100 [DEBUG] provider: plugin exited
+2024-11-25T16:12:52.484+0100 [INFO]  backend/local: apply calling Plan
+2024-11-25T16:12:52.484+0100 [DEBUG] Building and walking plan graph for NormalMode
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "data.morpheus_cloud.morpheus_vsphere (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "data.morpheus_resource_pool.vsphere_resource_pool (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_type.centos_instance (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "data.morpheus_group.testGroup (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "data.morpheus_plan.vmware (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.484+0100 [DEBUG] ProviderTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere (expand)" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "data.morpheus_resource_pool.vsphere_resource_pool (expand)" references: [data.morpheus_cloud.morpheus_vsphere (expand)]
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.centos_instance (expand)" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.testGroup (expand)" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware (expand)" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "var.tenant_subdomain" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance (expand)" references: [data.morpheus_group.testGroup (expand) data.morpheus_resource_pool.vsphere_resource_pool (expand) data.morpheus_cloud.morpheus_vsphere (expand) data.morpheus_instance_type.centos_instance (expand) data.morpheus_plan.vmware (expand)]
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/gomorpheus/morpheus\"]" references: [var.morpheus_url]
+2024-11-25T16:12:52.485+0100 [DEBUG] ReferenceTransformer: "var.morpheus_url" references: []
+2024-11-25T16:12:52.485+0100 [DEBUG] Starting graph walk: walkPlan
+2024-11-25T16:12:52.492+0100 [DEBUG] created provider logger: level=debug
+2024-11-25T16:12:52.492+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-25T16:12:52.496+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-25T16:12:52.500+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10386
+2024-11-25T16:12:52.500+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-25T16:12:53.073+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-25T16:12:53.073+0100"
+2024-11-25T16:12:53.152+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: address=/tmp/plugin237873553 network=unix timestamp="2024-11-25T16:12:53.152+0100"
+2024-11-25T16:12:53.152+0100 [DEBUG] provider: using plugin: version=5
+2024-11-25T16:12:53.188+0100 [DEBUG] Resource instance state not found for node "data.morpheus_group.testGroup", instance data.morpheus_group.testGroup
+2024-11-25T16:12:53.188+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.testGroup" references: []
+2024-11-25T16:12:53.188+0100 [DEBUG] Resource instance state not found for node "data.morpheus_instance_type.centos_instance", instance data.morpheus_instance_type.centos_instance
+2024-11-25T16:12:53.188+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.centos_instance" references: []
+2024-11-25T16:12:53.188+0100 [DEBUG] Resource instance state not found for node "data.morpheus_plan.vmware", instance data.morpheus_plan.vmware
+2024-11-25T16:12:53.188+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware" references: []
+2024-11-25T16:12:53.188+0100 [DEBUG] Resource instance state not found for node "data.morpheus_cloud.morpheus_vsphere", instance data.morpheus_cloud.morpheus_vsphere       
+2024-11-25T16:12:53.189+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere" references: []
+2024-11-25T16:12:54.127+0100 [ERROR] Checkpoint error: Get "https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=linux&signature=&version=1.9.8": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-11-25T16:12:58.383+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 Login Failure: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"}: timestamp="2024-11-25T16:12:58.382+0100"
+2024-11-25T16:12:58.384+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 API FAILURE: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"} - API returned HTTP 400: timestamp="2024-11-25T16:12:58.383+0100"
+2024-11-25T16:12:58.384+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 diagnostic_detail="" diagnostic_severity=ERROR diagnostic_summary="API returned HTTP 400" tf_req_id=6e92afb4-b90d-eb69-ffc5-f5634916f592 tf_rpc=ReadDataSource @module=sdk.proto tf_data_source_type=morpheus_instance_type tf_proto_version=5.6 tf_provider_addr=provider timestamp="2024-11-25T16:12:58.383+0100"
+2024-11-25T16:12:58.384+0100 [ERROR] vertex "data.morpheus_instance_type.centos_instance" error: API returned HTTP 400
+2024-11-25T16:12:58.385+0100 [ERROR] vertex "data.morpheus_instance_type.centos_instance (expand)" error: API returned HTTP 400
+2024-11-25T16:12:58.390+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 Login Failure: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"}: timestamp="2024-11-25T16:12:58.390+0100"
+2024-11-25T16:12:58.390+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 API FAILURE: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"} - API returned HTTP 400: timestamp="2024-11-25T16:12:58.390+0100"
+2024-11-25T16:12:58.390+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: tf_req_id=60cb2fc1-7989-2478-9a0d-b96c500f3342 @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 diagnostic_severity=ERROR tf_data_source_type=morpheus_group tf_provider_addr=provider tf_rpc=ReadDataSource @module=sdk.proto diagnostic_detail="" diagnostic_summary="API returned HTTP 400" tf_proto_version=5.6 timestamp="2024-11-25T16:12:58.390+0100"
+2024-11-25T16:12:58.390+0100 [ERROR] vertex "data.morpheus_group.testGroup" error: API returned HTTP 400
+2024-11-25T16:12:58.390+0100 [ERROR] vertex "data.morpheus_group.testGroup (expand)" error: API returned HTTP 400
+2024-11-25T16:12:58.403+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 Login Failure: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"}: timestamp="2024-11-25T16:12:58.402+0100"
+2024-11-25T16:12:58.403+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 API FAILURE: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"} - API returned HTTP 400: timestamp="2024-11-25T16:12:58.402+0100"
+2024-11-25T16:12:58.403+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: diagnostic_severity=ERROR tf_proto_version=5.6 tf_rpc=ReadDataSource @module=sdk.proto diagnostic_detail="" diagnostic_summary="API returned HTTP 400" tf_data_source_type=morpheus_plan tf_provider_addr=provider @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 tf_req_id=34fe7329-489b-5f1c-421f-1b830c49d195 timestamp="2024-11-25T16:12:58.403+0100"2024-11-25T16:12:58.403+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 Login Failure: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"}: timestamp="2024-11-25T16:12:58.403+0100"
+2024-11-25T16:12:58.403+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/25 16:12:58 API FAILURE: Response HTTP: 400  Success: false  Size: 63B Body: {"error":"invalid_grant","error_description":"Bad credentials"} - API returned HTTP 400: timestamp="2024-11-25T16:12:58.403+0100"
+2024-11-25T16:12:58.403+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: diagnostic_summary="API returned HTTP 400" tf_data_source_type=morpheus_cloud tf_provider_addr=provider @module=sdk.proto diagnostic_detail="" diagnostic_severity=ERROR tf_proto_version=5.6 tf_req_id=555bad8f-7e59-e266-9cc6-f089870c371f tf_rpc=ReadDataSource @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 timestamp="2024-11-25T16:12:58.403+0100"
+2024-11-25T16:12:58.403+0100 [ERROR] vertex "data.morpheus_plan.vmware" error: API returned HTTP 400
+2024-11-25T16:12:58.403+0100 [ERROR] vertex "data.morpheus_cloud.morpheus_vsphere" error: API returned HTTP 400
+2024-11-25T16:12:58.403+0100 [ERROR] vertex "data.morpheus_cloud.morpheus_vsphere (expand)" error: API returned HTTP 400
+2024-11-25T16:12:58.403+0100 [ERROR] vertex "data.morpheus_plan.vmware (expand)" error: API returned HTTP 400
+2024-11-25T16:12:58.403+0100 [WARN]  Planning encountered errors, so plan is not applyable
+╷
+│ Error: API returned HTTP 400
+│
+│   with data.morpheus_cloud.morpheus_vsphere,
+│   on hiro-ah.tf line 6, in data "morpheus_cloud" "morpheus_vsphere":
+│    6: data "morpheus_cloud" "morpheus_vsphere" {
+│
+╵
+╷
+│ Error: API returned HTTP 400
+│
+│   with data.morpheus_instance_type.centos_instance,
+│   on hiro-ah.tf line 18, in data "morpheus_instance_type" "centos_instance":
+│   18: data "morpheus_instance_type" "centos_instance" {
+│
+╵
+╷
+│ Error: API returned HTTP 400
+│
+│   with data.morpheus_group.testGroup,
+│   on hiro-ah.tf line 23, in data "morpheus_group" "testGroup":
+│   23: data "morpheus_group" "testGroup" {
+│
+╵
+╷
+│ Error: API returned HTTP 400
+│
+│   with data.morpheus_plan.vmware,
+│   on hiro-ah.tf line 35, in data "morpheus_plan" "vmware":
+│   35: data "morpheus_plan" "vmware" {
+│
+╵
+2024-11-25T16:12:58.413+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error reading from server: EOF"
+2024-11-25T16:12:58.417+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10386
+2024-11-25T16:12:58.417+0100 [DEBUG] provider: plugin exited

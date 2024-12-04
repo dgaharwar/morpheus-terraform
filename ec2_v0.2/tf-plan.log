@@ -1,0 +1,202 @@
+2024-11-27T11:38:09.031+0100 [INFO]  Terraform version: 1.9.8
+2024-11-27T11:38:09.031+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.58.0
+2024-11-27T11:38:09.031+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.20.0
+2024-11-27T11:38:09.031+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.1.1
+2024-11-27T11:38:09.031+0100 [DEBUG] using github.com/zclconf/go-cty v1.14.4
+2024-11-27T11:38:09.031+0100 [INFO]  Go runtime version: go1.22.7
+2024-11-27T11:38:09.031+0100 [INFO]  CLI args: []string{"terraform", "plan"}
+2024-11-27T11:38:09.031+0100 [DEBUG] Attempting to open CLI config file: /home/hase/.terraformrc
+2024-11-27T11:38:09.031+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2024-11-27T11:38:09.032+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2024-11-27T11:38:09.032+0100 [DEBUG] ignoring non-existing provider search directory /home/hase/.terraform.d/plugins
+2024-11-27T11:38:09.032+0100 [DEBUG] will search for provider plugins in /home/hase/.local/share/terraform/plugins
+2024-11-27T11:38:09.032+0100 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2024-11-27T11:38:09.032+0100 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2024-11-27T11:38:09.032+0100 [DEBUG] ignoring non-existing provider search directory /var/lib/snapd/desktop/terraform/plugins
+2024-11-27T11:38:09.034+0100 [INFO]  CLI command args: []string{"plan"}
+2024-11-27T11:38:09.487+0100 [DEBUG] checking for provisioner in "."
+2024-11-27T11:38:09.489+0100 [DEBUG] checking for provisioner in "/usr/bin"
+2024-11-27T11:38:09.504+0100 [INFO]  backend/local: starting Plan operation
+2024-11-27T11:38:09.569+0100 [DEBUG] created provider logger: level=debug
+2024-11-27T11:38:09.569+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-27T11:38:09.579+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-27T11:38:09.598+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10876
+2024-11-27T11:38:09.598+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-27T11:38:10.542+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-27T11:38:10.542+0100"
+2024-11-27T11:38:10.715+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: address=/tmp/plugin3408545358 network=unix timestamp="2024-11-27T11:38:10.715+0100"
+2024-11-27T11:38:10.715+0100 [DEBUG] provider: using plugin: version=5
+2024-11-27T11:38:10.818+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error 
+reading from server: EOF"
+2024-11-27T11:38:10.823+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10876
+2024-11-27T11:38:10.823+0100 [DEBUG] provider: plugin exited
+2024-11-27T11:38:10.823+0100 [DEBUG] Building and walking validate graph
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_group.morpheus_lab" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_plan.vmware" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_layout.demo" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_type.demo" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_cloud.morpheus_vsphere" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_resource_pool.vsphere_resource_pool" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "data.morpheus_network.vmnetwork" (*terraform.NodeValidatableResource) needs 
+provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.824+0100 [DEBUG] ProviderTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance" (*terraform.NodeValidatableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:10.828+0100 [DEBUG] ReferenceTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance" references: [data.morpheus_resource_pool.vsphere_resource_pool data.morpheus_instance_layout.demo data.morpheus_cloud.morpheus_vsphere data.morpheus_instance_type.demo data.morpheus_group.morpheus_lab]
+2024-11-27T11:38:10.828+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.morpheus_lab" references: []
+2024-11-27T11:38:10.828+0100 [DEBUG] ReferenceTransformer: "var.morpheus_network_name" references: []
+2024-11-27T11:38:10.828+0100 [DEBUG] ReferenceTransformer: "var.vsphere_resource_pool" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_group_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_user" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_layout.demo" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_resource_pool_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_instance_type_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_plan_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_url" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_access_token" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.demo" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_instance_layout_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_password" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_resource_pool.vsphere_resource_pool" references: [data.morpheus_cloud.morpheus_vsphere]
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "data.morpheus_network.vmnetwork" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "var.morpheus_cloud_name" references: []
+2024-11-27T11:38:10.829+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/gomorpheus/morpheus\"]" references: [var.morpheus_url var.morpheus_access_token]
+2024-11-27T11:38:10.831+0100 [DEBUG] Starting graph walk: walkValidate
+2024-11-27T11:38:10.852+0100 [DEBUG] created provider logger: level=debug
+2024-11-27T11:38:10.852+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-27T11:38:10.859+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-27T11:38:10.874+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10889
+2024-11-27T11:38:10.874+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-27T11:38:11.549+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-27T11:38:11.548+0100"
+2024-11-27T11:38:11.700+0100 [DEBUG] provider: using plugin: version=5
+2024-11-27T11:38:11.700+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: address=/tmp/plugin2121147608 network=unix timestamp="2024-11-27T11:38:11.700+0100"
+2024-11-27T11:38:11.754+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error 
+reading from server: EOF"
+2024-11-27T11:38:11.758+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10889
+2024-11-27T11:38:11.758+0100 [DEBUG] provider: plugin exited
+2024-11-27T11:38:11.758+0100 [INFO]  backend/local: plan calling Plan
+2024-11-27T11:38:11.758+0100 [DEBUG] Building and walking plan graph for NormalMode
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_type.demo (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_resource_pool.vsphere_resource_pool (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_plan.vmware (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_instance_layout.demo (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_network.vmnetwork (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_cloud.morpheus_vsphere (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ProviderTransformer: "data.morpheus_group.morpheus_lab (expand)" (*terraform.nodeExpandPlannableResource) needs provider["registry.terraform.io/gomorpheus/morpheus"]
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere (expand)" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "var.morpheus_network_name" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "var.vsphere_resource_pool" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "provider[\"registry.terraform.io/gomorpheus/morpheus\"]" references: [var.morpheus_url var.morpheus_access_token]
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.morpheus_lab (expand)" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.demo (expand)" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "var.morpheus_access_token" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "data.morpheus_resource_pool.vsphere_resource_pool (expand)" references: [data.morpheus_cloud.morpheus_vsphere (expand)]
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware (expand)" references: []
+2024-11-27T11:38:11.759+0100 [DEBUG] ReferenceTransformer: "var.morpheus_instance_layout_name" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_url" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_instance_type_name" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_user" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_group_name" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "morpheus_vsphere_instance.tf_example_vsphere_instance (expand)" references: [data.morpheus_group.morpheus_lab (expand) data.morpheus_resource_pool.vsphere_resource_pool (expand) data.morpheus_instance_layout.demo (expand) data.morpheus_cloud.morpheus_vsphere (expand) data.morpheus_instance_type.demo (expand)]
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_layout.demo (expand)" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "data.morpheus_network.vmnetwork (expand)" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_plan_name" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_password" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_cloud_name" references: []
+2024-11-27T11:38:11.760+0100 [DEBUG] ReferenceTransformer: "var.morpheus_resource_pool_name" references: []
+2024-11-27T11:38:11.761+0100 [DEBUG] Starting graph walk: walkPlan
+2024-11-27T11:38:11.773+0100 [DEBUG] created provider logger: level=debug
+2024-11-27T11:38:11.773+0100 [INFO]  provider: configuring client automatic mTLS
+2024-11-27T11:38:11.779+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 args=[".terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0"]
+2024-11-27T11:38:11.794+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 pid=10902
+2024-11-27T11:38:11.794+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0
+2024-11-27T11:38:12.035+0100 [ERROR] Checkpoint error: Get "https://checkpoint-api.hashicorp.com/v1/check/terraform?arch=amd64&os=linux&signature=&version=1.9.8": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+2024-11-27T11:38:12.703+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: configuring server automatic mTLS: timestamp="2024-11-27T11:38:12.703+0100"
+2024-11-27T11:38:12.866+0100 [DEBUG] provider.terraform-provider-morpheus_v0.11.0: plugin address: address=/tmp/plugin1940430729 network=unix timestamp="2024-11-27T11:38:12.866+0100"
+2024-11-27T11:38:12.866+0100 [DEBUG] provider: using plugin: version=5
+2024-11-27T11:38:12.907+0100 [DEBUG] Resource instance state not found for node "data.morpheus_cloud.morpheus_vsphere", instance data.morpheus_cloud.morpheus_vsphere
+2024-11-27T11:38:12.907+0100 [DEBUG] ReferenceTransformer: "data.morpheus_cloud.morpheus_vsphere" references: []
+2024-11-27T11:38:12.907+0100 [DEBUG] Resource instance state not found for node "data.morpheus_instance_type.demo", instance data.morpheus_instance_type.demo
+2024-11-27T11:38:12.907+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_type.demo" references: []
+2024-11-27T11:38:12.908+0100 [DEBUG] Resource instance state not found for node "data.morpheus_plan.vmware", instance data.morpheus_plan.vmware
+2024-11-27T11:38:12.908+0100 [DEBUG] ReferenceTransformer: "data.morpheus_plan.vmware" references: []
+2024-11-27T11:38:12.908+0100 [DEBUG] Resource instance state not found for node "data.morpheus_network.vmnetwork", instance data.morpheus_network.vmnetwork
+2024-11-27T11:38:12.908+0100 [DEBUG] ReferenceTransformer: "data.morpheus_network.vmnetwork" references: []
+2024-11-27T11:38:12.908+0100 [DEBUG] Resource instance state not found for node "data.morpheus_group.morpheus_lab", instance data.morpheus_group.morpheus_lab
+2024-11-27T11:38:12.908+0100 [DEBUG] ReferenceTransformer: "data.morpheus_group.morpheus_lab" references: []
+2024-11-27T11:38:12.908+0100 [DEBUG] Resource instance state not found for node "data.morpheus_instance_layout.demo", instance data.morpheus_instance_layout.demo
+data.morpheus_cloud.morpheus_vsphere: Reading...
+2024-11-27T11:38:12.908+0100 [DEBUG] ReferenceTransformer: "data.morpheus_instance_layout.demo" references: []
+data.morpheus_instance_type.demo: Reading...
+data.morpheus_plan.vmware: Reading...
+data.morpheus_network.vmnetwork: Reading...
+data.morpheus_instance_layout.demo: Reading...
+data.morpheus_group.morpheus_lab: Reading...
+2024-11-27T11:38:18.035+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:18 Failed to parse JSON result for 
+type *morpheus.GetNetworkResult. Parse Error: json: cannot unmarshal object into Go struct field Network.network.pool of type string: timestamp="2024-11-27T11:38:18.035+0100"
+2024-11-27T11:38:18.036+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:18 API RESPONSE: Response HTTP: 200  Success: true  Size: 2060B Body: {"network":{"id":274,"name":"dPG_2306_Infrastruktur-Server","displayName":null,"labels":[],"tags":[],"group":null,"zone":{"id":10,"name":"test vCenter Alletra"},"type":{"id":26,"name":"Distributed Switch Group","code":"vmwareDistributed"},"owner":{"id":1,"name":"DG"},"code":"vmware.network.10.dvportgroup-1023","ipv4Enabled":true,"ipv6Enabled":false,"category":"vmware.network.10","interfaceName":null,"bridgeName":null,"bridgeInterface":null,"description":null,"externalId":"dvportgroup-1023","internalId":"50 1d 85 47 ed 3a 6b 8e-1e 16 6d 3f 5a 27 3d 22","uniqueId":"dvportgroup-1023","externalType":"DistributedVirtualPortgroup","refUrl":null,"refType":"ComputeZone","refId":10,"vlanId":0,"vswitchName":null,"dhcpServer":false,"dhcpIp":null,"dhcpServerIPv6":false,"gateway":"10.110.139.1","netmask":null,"broadcast":"10.110.139.255","subnetAddress":null,"dnsPrimary":"10.110.139.2","dnsSecondary":"10.110.139.3","dnsPrimaryIPv6":"2a0c:ed80:0:202::135","dnsSecondaryIPv6":"2a0c:ed80:0:202::136","cidr":"10.110.138.0/23","cidrIPv6":"2a0c:ed80:1::/64","gatewayIPv6":"2a0c:ed80:1::1","netmaskIPv6":null,"tftpServer":null,"bootFile":null,"switchId":null,"fabricId":null,"networkRole":null,"status":"ok","availabilityZone":null,"pool":{"id":19581,"name":"10.110.138.0/23","dhcpServer":false},"poolIPv6":{"id":5369,"name":"2a0c:ed80:1::/64","dhcpServer":false},"networkProxy":null,"networkDomain":{"id":2,"name":"corbox-engine.lan"},"searchDomains":null,"prefixLength":null,"visibility":"private","enableAdmin":false,"active":true,"defaultNetwork":false,"assignPublicIp":false,"noProxy":null,"applianceUrlProxyBypass":true,"zonePool":{"id":5126,"name":"Business Advanced"},"allowStaticOverride":true,"subnets":[],"tenants":[{"id":1,"name":"DG"},{"id":17,"name":"DOP - Datagroup Operations - Zabbix proxy"},{"id":59,"name":"DOP - Datagroup Operations - Jump server"},{"id":16,"name":"Test tenant"}],"resourcePermission":{"all":true,"sites":[],"allPlans":true,"plans":[]}},"nodes":{"containers":[],"instances":[],"apps":[]},"instanceStats":{},"instanceClusters":[]}: timestamp="2024-11-27T11:38:18.035+0100"
+data.morpheus_network.vmnetwork: Read complete after 5s [name=dPG_2306_Infrastruktur-Server]
+2024-11-27T11:38:18.125+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:18 API FAILURE: Response HTTP: 200 
+ Success: true  Size: 68B Body: {"instanceTypes":[],"meta":{"offset":0,"max":25,"size":0,"total":0}} - found 0 InstanceTypes for DEV - 
+Datagroup Rocky Linux servers: timestamp="2024-11-27T11:38:18.125+0100"
+2024-11-27T11:38:18.126+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: diagnostic_summary="found 0 InstanceTypes for DEV - Datagroup Rocky Linux servers" tf_proto_version=5.6 tf_rpc=ReadDataSource tf_data_source_type=morpheus_instance_type tf_provider_addr=provider tf_req_id=81f0487c-0905-4609-dbbe-ba7d4fe6cdee @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 @module=sdk.proto diagnostic_detail="" diagnostic_severity=ERROR timestamp="2024-11-27T11:38:18.125+0100"
+2024-11-27T11:38:18.126+0100 [ERROR] vertex "data.morpheus_instance_type.demo" error: found 0 InstanceTypes for DEV - Datagroup Rocky Linux servers
+2024-11-27T11:38:18.126+0100 [ERROR] vertex "data.morpheus_instance_type.demo (expand)" error: found 0 InstanceTypes for DEV - Datagroup Rocky Linux servers
+2024-11-27T11:38:18.295+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:18 API FAILURE: Response HTTP: 200 
+ Success: true  Size: 76B Body: {"instanceTypeLayouts":[],"meta":{"offset":0,"max":5000,"size":0,"total":0}} - found 0 InstanceLayouts 
+for 1 - Rocky Linux 9: timestamp="2024-11-27T11:38:18.294+0100"
+2024-11-27T11:38:18.295+0100 [ERROR] provider.terraform-provider-morpheus_v0.11.0: Response contains error diagnostic: tf_data_source_type=morpheus_instance_layout tf_req_id=6b635b43-ad05-01b0-393b-3b3107f6fb33 @caller=github.com/hashicorp/terraform-plugin-go@v0.23.0/tfprotov5/internal/diag/diagnostics.go:58 diagnostic_detail="" diagnostic_severity=ERROR diagnostic_summary="found 0 InstanceLayouts for 
+1 - Rocky Linux 9" tf_proto_version=5.6 tf_provider_addr=provider @module=sdk.proto tf_rpc=ReadDataSource timestamp="2024-11-27T11:38:18.295+0100"
+2024-11-27T11:38:18.296+0100 [ERROR] vertex "data.morpheus_instance_layout.demo" error: found 0 InstanceLayouts for 1 - Rocky Linux 9  
+2024-11-27T11:38:18.296+0100 [ERROR] vertex "data.morpheus_instance_layout.demo (expand)" error: found 0 InstanceLayouts for 1 - Rocky 
+Linux 9
+data.morpheus_instance_type.demo: Still reading... [10s elapsed]
+data.morpheus_cloud.morpheus_vsphere: Still reading... [10s elapsed]
+data.morpheus_instance_layout.demo: Still reading... [10s elapsed]
+data.morpheus_plan.vmware: Still reading... [10s elapsed]
+data.morpheus_group.morpheus_lab: Still reading... [10s elapsed]
+2024-11-27T11:38:23.337+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:23 API RESPONSE: Response HTTP: 200  Success: true  Size: 1444B Body: {"zone":{"id":10,"uuid":"81f51ddd-dee1-4725-bc31-020d324eb1d1","externalId":null,"name":"test vCenter Alletra","code":"FRA","labels":[],"location":null,"owner":{"id":1,"name":"DG"},"accountId":1,"account":{"id":1,"name":"DG"},"visibility":"public","enabled":true,"status":"ok","statusMessage":null,"statusDate":"2024-11-27T10:33:24Z","lastSync":"2024-11-27T10:33:12Z","nextRunDate":"2024-11-27T10:38:25Z","lastSyncDuration":12359,"costStatus":"ok","costStatusMessage":null,"costStatusDate":"2024-11-27T01:30:08Z","costLastSyncDuration":3207,"costLastSync":"2024-11-27T01:30:04Z","zoneType":{"id":27,"code":"vmware","name":"VMware vCenter"},"zoneTypeId":27,"guidanceMode":"manual","agentMode":"cloudInit","userDataLinux":null,"userDataWindows":null,"consoleKeymap":"de","costingMode":"costing","serviceVersion":null,"securityMode":"off","inventoryLevel":"off","timezone":"Europe/Berlin","apiProxy":null,"provisioningProxy":null,"networkDomain":null,"domainName":"localdomain","regionCode":"ab7c8191d50a37022f8cb26f593ff54474e45ef29ab2ea9cdbe04762","autoRecoverPowerState":false,"scalePriority":1,"imagePath":null,"darkImagePath":null,"dateCreated":"2020-10-26T12:08:19Z","lastUpdated":"2024-11-27T10:33:24Z","groups":[{"id":614,"name":"DonatasTest","accountId":16},{"id":39,"name":"TestVmware","accountId":16}],"stats":{"serverCounts":{"all":36,"host":36,"hypervisor":0,"containerHost":36,"vm":38,"baremetal":0,"unmanaged":0}},"serverCount":36}}: timestamp="2024-11-27T11:38:23.337+0100"
+2024-11-27T11:38:23.337+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:23 API RESPONSE: Response HTTP: 200  Success: true  Size: 584B Body: {"group":{"id":39,"uuid":"7911a378-49ae-4b65-a36c-752c24f9f447","name":"TestVmware","code":null,"labels":[],"location":null,"accountId":16,"active":true,"config":{"serviceRegistryId":"","configCmdbDiscovery":false},"dateCreated":"2020-10-29T12:08:41Z","lastUpdated":"2024-10-29T10:58:35Z","zones":[{"id":10,"name":"test vCenter Alletra"},{"id":28,"name":"test vCenter Nimble"},{"id":34,"name":"vGPU InterXion (Corbox3)"}],"stats":{"instanceCounts":{"all":45},"serverCounts":{"all":42,"host":42,"hypervisor":0,"containerHost":42,"vm":45,"baremetal":0,"unmanaged":0}},"serverCount":42}}: timestamp="2024-11-27T11:38:23.337+0100"
+data.morpheus_group.morpheus_lab: Read complete after 10s [name=TestVmware]
+data.morpheus_cloud.morpheus_vsphere: Read complete after 10s [name=test vCenter Alletra]
+2024-11-27T11:38:23.339+0100 [DEBUG] Resource instance state not found for node "data.morpheus_resource_pool.vsphere_resource_pool", instance data.morpheus_resource_pool.vsphere_resource_pool
+2024-11-27T11:38:23.339+0100 [DEBUG] ReferenceTransformer: "data.morpheus_resource_pool.vsphere_resource_pool" references: []
+data.morpheus_resource_pool.vsphere_resource_pool: Reading...
+2024-11-27T11:38:28.485+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:28 Failed to parse JSON result for 
+type *morpheus.ListResourcePoolsResult. Parse Error: json: cannot unmarshal bool into Go struct field .resourcePools.resourcePermission.all of type string: timestamp="2024-11-27T11:38:28.485+0100"
+data.morpheus_plan.vmware: Still reading... [20s elapsed]
+data.morpheus_instance_type.demo: Still reading... [20s elapsed]
+data.morpheus_instance_layout.demo: Still reading... [20s elapsed]
+data.morpheus_resource_pool.vsphere_resource_pool: Still reading... [10s elapsed]
+2024-11-27T11:38:33.666+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:33 API RESPONSE: Response HTTP: 200  Success: true  Size: 1102B Body: {"servicePlan":{"id":405,"name":"4 CPU, 16GB Memory - L","code":"L T-Shirt size","active":true,"sortOrder":0,"description":null,"maxStorage":0,"maxMemory":17179869184,"maxCpu":null,"maxCores":4,"maxDisks":5,"coresPerSocket":1,"customCpu":false,"customCores":false,"customMaxStorage":true,"customMaxDataStorage":true,"customMaxMemory":false,"addVolumes":true,"memoryOptionSource":null,"cpuOptionSource":null,"dateCreated":"2020-06-10T13:34:39Z","lastUpdated":"2023-12-27T11:44:37Z","regionCode":null,"visibility":"public","editable":true,"provisionType":{"id":6,"name":"VMware","code":"vmware","rootDiskCustomizable":true,"addVolumes":true,"customizeVolume":true,"hasConfigurableCpuSockets":true},"tenants":"DG","priceSets":[{"id":28,"name":"DG-BS-L","code":"priceset.dg-bs-l","priceUnit":"month"}],"config":{"storageSizeType":"gb","memorySizeType":"gb","ranges":{"minStorage":"","maxStorage":"","minPerDiskSize":"","maxPerDiskSize":"","minMemory":"","maxMemory":"","minCores":"","maxCores":"","minSockets":"","maxSockets":"","minCoresPerSocket":"","maxCoresPerSocket":""}},"zones":[],"permissions":{}}}: timestamp="2024-11-27T11:38:33.665+0100"
+data.morpheus_plan.vmware: Read complete after 21s [name=4 CPU, 16GB Memory - L]
+2024-11-27T11:38:33.667+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:33 Failed to parse JSON result for 
+type *morpheus.GetResourcePoolResult. Parse Error: json: cannot unmarshal bool into Go struct field .resourcePool.resourcePermission.all of type string: timestamp="2024-11-27T11:38:33.667+0100"
+2024-11-27T11:38:33.667+0100 [INFO]  provider.terraform-provider-morpheus_v0.11.0: 2024/11/27 11:38:33 API RESPONSE: Response HTTP: 200  Success: true  Size: 744B Body: {"resourcePool":{"id":5126,"description":null,"zone":{"id":10,"name":"test vCenter Alletra"},"parent":null,"type":"default","externalId":"resgroup-99257","regionCode":null,"iacId":null,"visibility":"private","readOnly":false,"defaultPool":false,"active":true,"status":"available","inventory":true,"config":{},"name":"Business Advanced","displayName":"","tenants":[{"id":1,"name":"DG"},{"id":16,"name":"Test tenant"},{"id":49,"name":"TST - Development"},{"id":17,"name":"DOP - Datagroup Operations - Zabbix 
+proxy"},{"id":59,"name":"DOP - Datagroup Operations - Jump server"},{"id":64,"name":"HIRO Action Handlers"},{"id":66,"name":"BURG - Tiefer Brunnen im Brunnenhaus"}],"resourcePermission":{"all":true,"sites":[],"allPlans":true,"plans":[]}}}: timestamp="2024-11-27T11:38:33.667+0100"
+data.morpheus_resource_pool.vsphere_resource_pool: Read complete after 11s [name=Business Advanced]
+2024-11-27T11:38:33.668+0100 [WARN]  Planning encountered errors, so plan is not applyable
+2024-11-27T11:38:33.668+0100 [INFO]  backend/local: plan operation completed
+
+Planning failed. Terraform encountered an error while generating this plan.
+
+╷
+│ Error: found 0 InstanceTypes for DEV - Datagroup Rocky Linux servers
+│
+│   with data.morpheus_instance_type.demo,
+│   on main.tf line 40, in data "morpheus_instance_type" "demo":
+│   40: data "morpheus_instance_type" "demo" {
+│
+╵
+╷
+│ Error: found 0 InstanceLayouts for 1 - Rocky Linux 9
+│
+│   with data.morpheus_instance_layout.demo,
+│   on main.tf line 47, in data "morpheus_instance_layout" "demo":
+│   47: data "morpheus_instance_layout" "demo" {
+│
+╵
+2024-11-27T11:38:33.683+0100 [DEBUG] provider.stdio: received EOF, stopping recv loop: err="rpc error: code = Unavailable desc = error 
+reading from server: EOF"
+2024-11-27T11:38:33.690+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/gomorpheus/morpheus/0.11.0/linux_amd64/terraform-provider-morpheus_v0.11.0 id=10902
+2024-11-27T11:38:33.690+0100 [DEBUG] provider: plugin exited
