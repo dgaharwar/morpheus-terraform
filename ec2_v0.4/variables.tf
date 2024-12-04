@@ -73,7 +73,7 @@ variable "disable_api_termination" {
 variable "availability_zone" {
   description = "AZ for the EC2 instance"
   type        = string
-  default     = "us-east-1a"
+  default     = "us-east-1f"
 }
 
 variable "subnet_id" {
