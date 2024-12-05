@@ -4,18 +4,22 @@ variable "instance_id" {
 
 variable "volume_device_name" {
   description = "(Required) The device name to expose to the instance (for example, /dev/sdh or xvdh). Read more about [device names on Linux instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html) and [on Windows instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/device_naming.html)"
+  default     = "/dev/xvdf"
 }
 
 variable "availability_zone" {
   description = "(Required) The AZ where the EBS volume will exist."
+  default     = "us-east-1f"
 }
 
 variable "volume_size" {
   description = "(Required) The size of the drive in GiBs."
+  default     = 10
 }
 
 variable "type" {
   description = "(Required) The type of EBS volume. Can be standard, gp2, gp3, io1, io2, sc1 or st1."
+  default     = gp2
 
   validation {
     condition     = contains(["gp2", "gp3", "io1", "io2", "sc1", "st1"], var.type)
