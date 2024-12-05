@@ -4,13 +4,10 @@ variable "aws_access_key" {
 
 variable "aws_secret_key" {
   type = string
-
 }
 
 variable "aws_region" {
   description = "The region where to deploy this code (e.g. us-east-1)."
-  default     = "us-east-1"
-
 }
 
 # Instance Variables
@@ -28,6 +25,7 @@ variable "instance_name" {
 variable "ami" {
   description = "ID of the AMI to use for the instance"
   type        = string
+  default     = "ami-0866a3c8686eaeeba"
 }
 
 
@@ -58,11 +56,13 @@ variable "disable_api_termination" {
 variable "availability_zone" {
   description = "AZ for the EC2 instance"
   type        = string
+  default     = "us-east-1f"
 }
 
 variable "subnet_id" {
   description = "Subnet ID for the EC2 instance"
   type        = string
+  default     = "subnet-ed6462e3"
 }
 
 variable "private_ip" {
@@ -232,13 +232,13 @@ variable "timeouts" {
 variable "cpu_core_count" {
   description = "Sets the number of CPU cores for an instance." # This option is only supported on creation of instance type that support CPU Options https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html#cpu-options-supported-instances-values
   type        = number
-  default     = null
+  default     = 1
 }
 
 variable "cpu_threads_per_core" {
   description = "Sets the number of CPU threads per core for an instance (has no effect unless cpu_core_count is also set)."
   type        = number
-  default     = null
+  default     = 1
 }
 
 variable "disable_api_stop" {
@@ -259,7 +259,7 @@ variable "use_existing_key" {
 variable "existing_key_name" {
   description = "The name of the existing key pair to use (if 'use_existing_key' is true)."
   type        = string
-  default     = "aung-windows"
+  default     = "MorpheusApp"
 }
 
 variable "public_key" {
@@ -279,7 +279,7 @@ variable "key_pair_name" {
 variable "existing_sg_id" {
   description = "The ID of the existing security group to use if 'use_existing_sg' is true."
   type        = string
-  default     = ""
+  default     = "sg-2b299333"
 }
 
 
@@ -291,6 +291,7 @@ data "aws_security_group" "existing_sg" {
 variable "vpc_id" {
   description = "The ID of the VPC where the security group will be created."
   type        = string
+  default     = "vpc-33ac354e"
 }
 
 variable "tags" {
@@ -309,6 +310,7 @@ variable "create_volume" {
 variable "volume_device_name" {
   description = "Device name for the volume"
   type        = string
+  default     = "/dev/xvdf"
 }
 
 variable "volume_size" {
@@ -382,7 +384,3 @@ variable "stop_instance_before_detaching" {
   type        = bool
   default     = true
 }
-
-
-
-
