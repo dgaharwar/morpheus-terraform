@@ -5,12 +5,13 @@
 variable "existing_sg_id" {
   description = "The ID of the existing security group to use if 'use_existing_sg' is true."
   type        = string
-  default     = ""
+  default     = "sg-2b299333"
 }
 
 variable "vpc_id" {
   description = "The ID of the VPC where the security group will be created."
   type        = string
+  default     = "vpc-33ac354e"
 }
 
 variable "revoke_rules_on_delete" {
