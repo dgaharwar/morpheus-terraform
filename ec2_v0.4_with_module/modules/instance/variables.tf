@@ -14,19 +14,19 @@ variable "name" {
 variable "ami" {
   description = "ID of AMI to use for the instance"
   type        = string
-  default     = ""
+  default     = "ami-0866a3c8686eaeeba"
 }
 
 variable "associate_public_ip_address" {
   description = "Whether to associate a public IP address with an instance in a VPC"
   type        = bool
-  default     = null
+  default     = false
 }
 
 variable "availability_zone" {
   description = "AZ to start the instance in"
   type        = string
-  default     = null
+  default     = "us-east-1f"
 }
 
 variable "capacity_reservation_specification" {
@@ -128,7 +128,7 @@ variable "ipv6_addresses" {
 variable "key_name" {
   description = "Key name of the Key Pair to use for the instance; which can be managed using the `aws_key_pair` resource"
   type        = string
-  default     = null
+  default     = "MorpheusApp"
 }
 
 variable "launch_template" {
@@ -185,7 +185,7 @@ variable "source_dest_check" {
 variable "subnet_id" {
   description = "The VPC Subnet ID to launch in"
   type        = string
-  default     = null
+  default     = "subnet-ed6462e3"
 }
 
 variable "tags" {
